@@ -52,9 +52,13 @@
 
 //--Handle Drawing--
 
+#define CENTER_FONT_HEIGHT 80.0
 #define CORNER_FONT_HEIGHT 180.0
 #define CORNER_RADIUS 12.0
 
+- (CGFloat)centerScaleFactor{
+    return (self.bounds.size.height/CENTER_FONT_HEIGHT);
+}
 - (CGFloat)cornerScaleFactor{
     return (self.bounds.size.height/CORNER_FONT_HEIGHT);
 }
@@ -79,6 +83,7 @@
     
     if(self.faceUP){
         [self drawCorners];
+        [self drawCenter];
     }else{
         [[UIImage imageNamed:@"cardback"] drawInRect:self.bounds];
     }
@@ -105,6 +110,24 @@
     [self saveContextAndRotateUpsideDown];
     [cornerText drawInRect:textBounds];
     [self popContext];
+}
+
+-(void)drawCenter{
+    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+    paragraphStyle.alignment = NSTextAlignmentCenter;
+    
+    UIFont *centerFont = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
+    centerFont = [centerFont fontWithSize:centerFont.pointSize * [self centerScaleFactor]];
+    
+    NSAttributedString *centerText = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"%@%@", [self rankAsString], [self suit]]
+                                                                     attributes:@{
+                                                                                  NSParagraphStyleAttributeName : paragraphStyle,
+                                                                                  NSFontAttributeName : centerFont
+                                                                                  }];
+    CGPoint center = CGPointMake(self.bounds.size.width/2, self.bounds.size.height/2);
+    CGPoint centerTextOrigin = CGPointMake(center.x-(centerText.size.width/2), center.y-(centerText.size.height/2));
+    
+    [centerText drawAtPoint:centerTextOrigin];
 }
 
 - (void) saveContextAndRotateUpsideDown{
