@@ -38,7 +38,15 @@
 - (void)touch:(UITapGestureRecognizer *)sender{
     if(!self.playingCardView.faceUP)
         [self drawRandomCard];
-    self.playingCardView.faceUP = !self.playingCardView.faceUP;
+    
+    [UIView transitionWithView:self.playingCardView
+                      duration:1.5
+                       options:UIViewAnimationOptionTransitionCurlUp
+                    animations:^{
+                        self.playingCardView.faceUP = !self.playingCardView.faceUP;
+                    }
+                    completion:nil];
+    //self.playingCardView.faceUP = !self.playingCardView.faceUP;
 }
 
 - (void)viewDidLoad {
