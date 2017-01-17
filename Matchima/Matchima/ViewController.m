@@ -40,8 +40,8 @@
         [self drawRandomCard];
     
     [UIView transitionWithView:self.playingCardView
-                      duration:1.5
-                       options:UIViewAnimationOptionTransitionCurlUp
+                      duration:0.6
+                       options:UIViewAnimationOptionTransitionFlipFromLeft
                     animations:^{
                         self.playingCardView.faceUP = !self.playingCardView.faceUP;
                     }

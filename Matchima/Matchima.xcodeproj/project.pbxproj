@@ -20,6 +20,7 @@
 		141B9DE61E2446BA008005F8 /* Deck.m in Sources */ = {isa = PBXBuildFile; fileRef = 141B9DE01E2446BA008005F8 /* Deck.m */; };
 		141B9DE71E2446BA008005F8 /* PlayingCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 141B9DE21E2446BA008005F8 /* PlayingCard.m */; };
 		141B9DE81E2446BA008005F8 /* PlayingCardDeck.m in Sources */ = {isa = PBXBuildFile; fileRef = 141B9DE41E2446BA008005F8 /* PlayingCardDeck.m */; };
+		141B9DEB1E2DD3BD008005F8 /* SetCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 141B9DEA1E2DD3BD008005F8 /* SetCardView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,8 @@
 		141B9DE21E2446BA008005F8 /* PlayingCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayingCard.m; sourceTree = "<group>"; };
 		141B9DE31E2446BA008005F8 /* PlayingCardDeck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayingCardDeck.h; sourceTree = "<group>"; };
 		141B9DE41E2446BA008005F8 /* PlayingCardDeck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayingCardDeck.m; sourceTree = "<group>"; };
+		141B9DE91E2DD312008005F8 /* SetCardView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SetCardView.h; sourceTree = "<group>"; };
+		141B9DEA1E2DD3BD008005F8 /* SetCardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetCardView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +122,8 @@
 				141B9DDC1E244639008005F8 /* Model */,
 				141B9DDB1E242C1F008005F8 /* PlayingCardView.h */,
 				141B9DD91E242B8A008005F8 /* PlayingCardView.m */,
+				141B9DE91E2DD312008005F8 /* SetCardView.h */,
+				141B9DEA1E2DD3BD008005F8 /* SetCardView.m */,
 				141B9DA81E242A4B008005F8 /* ViewController.h */,
 				141B9DA91E242A4B008005F8 /* ViewController.m */,
 				141B9DAB1E242A4B008005F8 /* Main.storyboard */,
@@ -306,6 +311,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				141B9DEB1E2DD3BD008005F8 /* SetCardView.m in Sources */,
 				141B9DE51E2446BA008005F8 /* Card.m in Sources */,
 				141B9DE81E2446BA008005F8 /* PlayingCardDeck.m in Sources */,
 				141B9DAA1E242A4B008005F8 /* ViewController.m in Sources */,
