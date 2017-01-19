@@ -79,14 +79,50 @@
     [[UIColor blackColor] setStroke];
     [roundedRect stroke];
     
-    [self drawOvalAt:-1*([self shapeWidthScaleFactor]/2) and:-1*([self shapeHeightScaleFactor]/2) withColor:[UIColor blueColor] andShading:@"Striped"];
+    [self drawSquiggleAt:-1*([self shapeWidthScaleFactor]/2) and:0 withColor:[UIColor blackColor] andShading:@"Open"];
     
-//    [self drawDiamondAt:-1*([self shapeWidthScaleFactor]/2) and:0 withColor:[UIColor blueColor] andShading:@"Solid"];
+//    [self drawOvalAt:-1*([self shapeWidthScaleFactor]/2) and:-1*([self shapeHeightScaleFactor]/2) withColor:[UIColor blueColor] andShading:@"Striped"];
+    
+//    [self drawDiamondAt:-1*([self shapeWidthScaleFactor]/2) and:0 withColor:[UIColor greenColor] andShading:@"Striped"];
+}
+
+-(void)drawSquiggleAt: (CGFloat)hOffset and:(CGFloat)vOffset withColor:(UIColor *)color andShading:(NSString *)shading{
+    [self saveContext];
+    
+    CGPoint center = CGPointMake(self.bounds.size.width/2, self.bounds.size.height/2);
+    CGPoint startPoint = CGPointMake(center.x + hOffset, center.y + vOffset);
+    CGFloat shapeHeight = [self shapeHeightScaleFactor];
+    CGFloat shapeWidth = [self shapeWidthScaleFactor];
+
+    
+    //Six Curves are needed to draw squiggle. Create an array of points for each curve
+    NSArray *curve1 = @[[NSValue valueWithCGPoint:CGPointMake(startPoint.x + 0.55*shapeWidth, startPoint.y-0.3)],
+                        [NSValue valueWithCGPoint:CGPointMake(startPoint.x + 0.15*shapeWidth, startPoint.y - 0.45*shapeHeight )],
+                        [NSValue valueWithCGPoint:CGPointMake(startPoint.x + 0.4*shapeWidth, startPoint.y - 0.45*shapeHeight)]
+                        ];
+    
+    
+    NSArray *curve2;
+    NSArray *curve3;
+    NSArray *curve4;
+    NSArray *curve5;
+    NSArray *curve6;
+    
+    UIBezierPath *bezierPath = [[UIBezierPath alloc] init];
+    
+    [bezierPath moveToPoint:startPoint];
+    [bezierPath addCurveToPoint:((NSValue *)curve1[0]).CGPointValue controlPoint1:((NSValue *)curve1[1]).CGPointValue controlPoint2:((NSValue *)curve1[2]).CGPointValue];
+    
+    [color setStroke];
+    [bezierPath stroke];
+    
+    
+    [self restoreContext];
 }
 
 #define OVAL_CORNER_RADIUS_RATIO 0.3
 
--(void)drawOvalAt: (CGFloat)hOffSet and:(CGFloat)vOffSet withColor: (UIColor *)color andShading:(NSString *)shading{
+-(void)drawOvalAt: (CGFloat)hOffSet and:(CGFloat)vOffSet withColor:(UIColor *)color andShading:(NSString *)shading{
     [self saveContext];
     
     CGPoint center = CGPointMake(self.bounds.size.width/2, self.bounds.size.height/2);
@@ -102,6 +138,7 @@
     CGFloat ovalCornerRadius = shapeWidth * OVAL_CORNER_RADIUS_RATIO;
     
     UIBezierPath *bezierPath = [UIBezierPath bezierPathWithRoundedRect:enclosingRect cornerRadius:ovalCornerRadius];
+    bezierPath.lineWidth = 3.0;
     
     [color setStroke];
     [bezierPath stroke];
@@ -117,6 +154,7 @@
     if([shading isEqualToString:@"Striped"])
         [self addStrokeToRect:enclosingRect];
     
+    [self restoreContext];
 }
 
 -(void)drawDiamondAt: (CGFloat)hOffSet and: (CGFloat)vOffSet withColor: (UIColor *)color andShading:(NSString *)shading {
@@ -137,6 +175,7 @@
     enclosingRect.size = sizeOfRect;
     
     UIBezierPath *bezierPath = [[UIBezierPath alloc] init];
+    bezierPath.lineWidth = 3.0;
     [bezierPath moveToPoint:startPoint];
     
     CGPoint topCorner = CGPointMake(startPoint.x + halfWidth, startPoint.y - halfHeight);
