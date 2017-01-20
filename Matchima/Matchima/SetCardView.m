@@ -96,22 +96,44 @@
 
     
     //Six Curves are needed to draw squiggle. Create an array of points for each curve
-    NSArray *curve1 = @[[NSValue valueWithCGPoint:CGPointMake(startPoint.x + 0.55*shapeWidth, startPoint.y-0.3)],
-                        [NSValue valueWithCGPoint:CGPointMake(startPoint.x + 0.15*shapeWidth, startPoint.y - 0.45*shapeHeight )],
-                        [NSValue valueWithCGPoint:CGPointMake(startPoint.x + 0.4*shapeWidth, startPoint.y - 0.45*shapeHeight)]
+    NSArray *curve1 = @[[NSValue valueWithCGPoint:CGPointMake(startPoint.x + 0.45*shapeWidth, startPoint.y-0.35*shapeHeight)],
+                        [NSValue valueWithCGPoint:CGPointMake(startPoint.x + 0.15*shapeWidth, startPoint.y - 0.4*shapeHeight )],
+                        [NSValue valueWithCGPoint:CGPointMake(startPoint.x + 0.3*shapeWidth, startPoint.y - 0.43*shapeHeight)]
                         ];
     
     
-    NSArray *curve2;
-    NSArray *curve3;
-    NSArray *curve4;
-    NSArray *curve5;
+    NSArray *curve2 = @[[NSValue valueWithCGPoint:CGPointMake(startPoint.x + 0.85*shapeWidth, startPoint.y-0.45*shapeHeight)],
+                        [NSValue valueWithCGPoint:CGPointMake(startPoint.x + 0.6*shapeWidth, startPoint.y - 0.25*shapeHeight )],
+                        [NSValue valueWithCGPoint:CGPointMake(startPoint.x + 0.75*shapeWidth, startPoint.y - 0.25*shapeHeight)]
+                        ];
+    
+    NSArray *curve3 = @[[NSValue valueWithCGPoint:CGPointMake(startPoint.x + 0.95*shapeWidth, startPoint.y-0.2*shapeHeight)],
+                        [NSValue valueWithCGPoint:CGPointMake(startPoint.x + 0.9*shapeWidth, startPoint.y - 0.5*shapeHeight )],
+                        [NSValue valueWithCGPoint:CGPointMake(startPoint.x + 0.955*shapeWidth, startPoint.y - 0.4*shapeHeight)]
+                        ];
+    
+    NSArray *curve4 = @[[NSValue valueWithCGPoint:CGPointMake(startPoint.x + 0.8*shapeWidth, startPoint.y+0.35*shapeHeight)],
+                        [NSValue valueWithCGPoint:CGPointMake(startPoint.x + 0.92*shapeWidth, startPoint.y + 0.2*shapeHeight )],
+                        [NSValue valueWithCGPoint:CGPointMake(startPoint.x + 0.85*shapeWidth, startPoint.y + 0.3*shapeHeight)]
+                        ];
+    NSArray *curve5 = @[[NSValue valueWithCGPoint:CGPointMake(startPoint.x + 0.355*shapeWidth, startPoint.y+0.29*shapeHeight)],
+                        [NSValue valueWithCGPoint:CGPointMake(startPoint.x + 0.65*shapeWidth, startPoint.y + 0.42*shapeHeight )],
+                        [NSValue valueWithCGPoint:CGPointMake(startPoint.x + 0.45*shapeWidth, startPoint.y + 0.3*shapeHeight)]
+                        ];;
     NSArray *curve6;
     
     UIBezierPath *bezierPath = [[UIBezierPath alloc] init];
     
     [bezierPath moveToPoint:startPoint];
     [bezierPath addCurveToPoint:((NSValue *)curve1[0]).CGPointValue controlPoint1:((NSValue *)curve1[1]).CGPointValue controlPoint2:((NSValue *)curve1[2]).CGPointValue];
+    
+    [bezierPath addCurveToPoint:((NSValue *)curve2[0]).CGPointValue controlPoint1:((NSValue *)curve2[1]).CGPointValue controlPoint2:((NSValue *)curve2[2]).CGPointValue];
+    
+    [bezierPath addCurveToPoint:((NSValue *)curve3[0]).CGPointValue controlPoint1:((NSValue *)curve3[1]).CGPointValue controlPoint2:((NSValue *)curve3[2]).CGPointValue];
+    
+    [bezierPath addCurveToPoint:((NSValue *)curve4[0]).CGPointValue controlPoint1:((NSValue *)curve4[1]).CGPointValue controlPoint2:((NSValue *)curve4[2]).CGPointValue];
+    
+    [bezierPath addCurveToPoint:((NSValue *)curve5[0]).CGPointValue controlPoint1:((NSValue *)curve5[1]).CGPointValue controlPoint2:((NSValue *)curve5[2]).CGPointValue];
     
     [color setStroke];
     [bezierPath stroke];
