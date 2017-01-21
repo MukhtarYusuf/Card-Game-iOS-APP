@@ -79,7 +79,7 @@
     [[UIColor blackColor] setStroke];
     [roundedRect stroke];
     
-    [self drawSquiggleAt:-1*([self shapeWidthScaleFactor]/2) and:0 withColor:[UIColor blackColor] andShading:@"Open"];
+    [self drawSquiggleAt:-1*([self shapeWidthScaleFactor]/2) and:0 withColor:[UIColor blueColor] andShading:@"Open"];
     
 //    [self drawOvalAt:-1*([self shapeWidthScaleFactor]/2) and:-1*([self shapeHeightScaleFactor]/2) withColor:[UIColor blueColor] andShading:@"Striped"];
     
@@ -95,7 +95,7 @@
     CGFloat shapeWidth = [self shapeWidthScaleFactor];
 
     
-    //Six Curves are needed to draw squiggle. Create an array of points for each curve
+    //7 Curves are needed to draw squiggle. Create an array of points for each curve
     NSArray *curve1 = @[[NSValue valueWithCGPoint:CGPointMake(startPoint.x + 0.45*shapeWidth, startPoint.y-0.35*shapeHeight)],
                         [NSValue valueWithCGPoint:CGPointMake(startPoint.x + 0.15*shapeWidth, startPoint.y - 0.4*shapeHeight )],
                         [NSValue valueWithCGPoint:CGPointMake(startPoint.x + 0.3*shapeWidth, startPoint.y - 0.43*shapeHeight)]
@@ -112,15 +112,25 @@
                         [NSValue valueWithCGPoint:CGPointMake(startPoint.x + 0.955*shapeWidth, startPoint.y - 0.4*shapeHeight)]
                         ];
     
-    NSArray *curve4 = @[[NSValue valueWithCGPoint:CGPointMake(startPoint.x + 0.8*shapeWidth, startPoint.y+0.35*shapeHeight)],
+    NSArray *curve4 = @[[NSValue valueWithCGPoint:CGPointMake(startPoint.x + 0.8*shapeWidth, startPoint.y+0.32*shapeHeight)],
                         [NSValue valueWithCGPoint:CGPointMake(startPoint.x + 0.92*shapeWidth, startPoint.y + 0.2*shapeHeight )],
                         [NSValue valueWithCGPoint:CGPointMake(startPoint.x + 0.85*shapeWidth, startPoint.y + 0.3*shapeHeight)]
                         ];
     NSArray *curve5 = @[[NSValue valueWithCGPoint:CGPointMake(startPoint.x + 0.355*shapeWidth, startPoint.y+0.29*shapeHeight)],
                         [NSValue valueWithCGPoint:CGPointMake(startPoint.x + 0.65*shapeWidth, startPoint.y + 0.42*shapeHeight )],
                         [NSValue valueWithCGPoint:CGPointMake(startPoint.x + 0.45*shapeWidth, startPoint.y + 0.3*shapeHeight)]
-                        ];;
-    NSArray *curve6;
+                        ];
+    NSArray *curve6 = @[[NSValue valueWithCGPoint:CGPointMake(startPoint.x + 0.15*shapeWidth, startPoint.y+0.45*shapeHeight)],
+                        [NSValue valueWithCGPoint:CGPointMake(startPoint.x + 0.18*shapeWidth, startPoint.y + 0.35*shapeHeight )],
+                        [NSValue valueWithCGPoint:CGPointMake(startPoint.x + 0.15*shapeWidth, startPoint.y + 0.45*shapeHeight)]
+                        ];
+    
+    NSArray *curve7 = @[[NSValue valueWithCGPoint:CGPointMake(startPoint.x + 0.01*shapeWidth, startPoint.y+0.2*shapeHeight)],
+                        [NSValue valueWithCGPoint:CGPointMake(startPoint.x + 0.1*shapeWidth, startPoint.y + 0.5*shapeHeight )],
+                        [NSValue valueWithCGPoint:CGPointMake(startPoint.x + 0.04*shapeWidth, startPoint.y + 0.4*shapeHeight)]
+                        ];
+    
+    NSArray *curve8;
     
     UIBezierPath *bezierPath = [[UIBezierPath alloc] init];
     
@@ -134,6 +144,10 @@
     [bezierPath addCurveToPoint:((NSValue *)curve4[0]).CGPointValue controlPoint1:((NSValue *)curve4[1]).CGPointValue controlPoint2:((NSValue *)curve4[2]).CGPointValue];
     
     [bezierPath addCurveToPoint:((NSValue *)curve5[0]).CGPointValue controlPoint1:((NSValue *)curve5[1]).CGPointValue controlPoint2:((NSValue *)curve5[2]).CGPointValue];
+    
+    [bezierPath addCurveToPoint:((NSValue *)curve6[0]).CGPointValue controlPoint1:((NSValue *)curve6[1]).CGPointValue controlPoint2:((NSValue *)curve6[2]).CGPointValue];
+    
+    [bezierPath addCurveToPoint:((NSValue *)curve7[0]).CGPointValue controlPoint1:((NSValue *)curve7[1]).CGPointValue controlPoint2:((NSValue *)curve7[2]).CGPointValue];
     
     [color setStroke];
     [bezierPath stroke];
@@ -224,16 +238,6 @@
 
     if([shading isEqualToString:@"Striped"]){
         [self addStrokeToRect:enclosingRect];
-//        CGFloat strokeSpacing = STROKE_SPACE_RATIO * enclosingRect.size.width;
-//        CGFloat topBoundary = enclosingRect.origin.y;
-//        CGFloat bottomBoundary = enclosingRect.origin.y + enclosingRect.size.height;
-//        
-//        for(double i = enclosingRect.origin.x; i < enclosingRect.size.width; i+=strokeSpacing){
-//            [bezierPath moveToPoint:CGPointMake(i, topBoundary)];
-//            [bezierPath addLineToPoint:CGPointMake(i, bottomBoundary)];
-//        }
-//        [color setStroke];
-//        [bezierPath stroke];
     }
     
 //    UIColor *fillandStrokeColor = self.colors[self.color];
@@ -264,7 +268,6 @@
         [bezierPath moveToPoint:CGPointMake(i, topBoundary)];
         [bezierPath addLineToPoint:CGPointMake(i, bottomBoundary)];
     }
-//    [[UIColor blackColor] setStroke];
     [bezierPath stroke];
     [self restoreContext];
 }
