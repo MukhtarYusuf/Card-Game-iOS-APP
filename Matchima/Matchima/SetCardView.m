@@ -96,6 +96,8 @@
 
     
     //7 Curves are needed to draw squiggle. Create an array of points for each curve
+    NSArray *curve0;
+    
     NSArray *curve1 = @[[NSValue valueWithCGPoint:CGPointMake(startPoint.x + 0.45*shapeWidth, startPoint.y-0.35*shapeHeight)],
                         [NSValue valueWithCGPoint:CGPointMake(startPoint.x + 0.15*shapeWidth, startPoint.y - 0.4*shapeHeight )],
                         [NSValue valueWithCGPoint:CGPointMake(startPoint.x + 0.3*shapeWidth, startPoint.y - 0.43*shapeHeight)]
@@ -130,7 +132,10 @@
                         [NSValue valueWithCGPoint:CGPointMake(startPoint.x + 0.04*shapeWidth, startPoint.y + 0.4*shapeHeight)]
                         ];
     
-    NSArray *curve8;
+    NSArray *curve8 = @[[NSValue valueWithCGPoint:CGPointMake(startPoint.x + 0.0*shapeWidth, startPoint.y+0.0*shapeHeight)],
+                        [NSValue valueWithCGPoint:CGPointMake(startPoint.x + 0.0*shapeWidth, startPoint.y + 0.15*shapeHeight )],
+                        [NSValue valueWithCGPoint:CGPointMake(startPoint.x + 0.0*shapeWidth, startPoint.y + 0.1*shapeHeight)]
+                        ];;
     
     UIBezierPath *bezierPath = [[UIBezierPath alloc] init];
     
@@ -148,6 +153,8 @@
     [bezierPath addCurveToPoint:((NSValue *)curve6[0]).CGPointValue controlPoint1:((NSValue *)curve6[1]).CGPointValue controlPoint2:((NSValue *)curve6[2]).CGPointValue];
     
     [bezierPath addCurveToPoint:((NSValue *)curve7[0]).CGPointValue controlPoint1:((NSValue *)curve7[1]).CGPointValue controlPoint2:((NSValue *)curve7[2]).CGPointValue];
+    
+    [bezierPath addCurveToPoint:((NSValue *)curve8[0]).CGPointValue controlPoint1:((NSValue *)curve8[1]).CGPointValue controlPoint2:((NSValue *)curve8[2]).CGPointValue];
     
     [color setStroke];
     [bezierPath stroke];
