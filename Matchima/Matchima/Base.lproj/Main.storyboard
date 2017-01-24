@@ -18,13 +18,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8dL-oB-ayo" customClass="PlayingCardView">
-                                <frame key="frameInset" minX="16" minY="20" width="68" height="95"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Atf-FT-jpy" customClass="SetCardView">
+                                <frame key="frameInset" minX="203" minY="219" width="144" height="228"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Atf-FT-jpy" customClass="SetCardView">
-                                <frame key="frameInset" minX="84" minY="162" width="206" height="342"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8dL-oB-ayo" customClass="PlayingCardView">
+                                <frame key="frameInset" minX="29" minY="219" width="145" height="228"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
@@ -33,6 +33,7 @@
                     </view>
                     <connections>
                         <outlet property="playingCardView" destination="8dL-oB-ayo" id="kWV-4J-CI5"/>
+                        <outlet property="setCardView" destination="Atf-FT-jpy" id="B0D-P7-Utz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
