@@ -123,7 +123,7 @@
 }
 
 + (NSArray *)validShapes{
-    return @[@"Circle", @"Triangle", @"Square"];
+    return @[@"Diamond", @"Oval", @"Squiggle"];
 }
 + (NSArray *)validColors{
     return @[@"Red", @"Green", @"Blue"];
