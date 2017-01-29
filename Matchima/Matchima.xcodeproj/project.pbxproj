@@ -23,6 +23,11 @@
 		141B9DEB1E2DD3BD008005F8 /* SetCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 141B9DEA1E2DD3BD008005F8 /* SetCardView.m */; };
 		141B9DF01E2ECC1B008005F8 /* SetCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 141B9DED1E2ECC1B008005F8 /* SetCard.m */; };
 		141B9DF11E2ECC1B008005F8 /* SetCardDeck.m in Sources */ = {isa = PBXBuildFile; fileRef = 141B9DEF1E2ECC1B008005F8 /* SetCardDeck.m */; };
+		142087F11E3D373900709751 /* CardGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 142087F01E3D373900709751 /* CardGameViewController.m */; };
+		142087F41E3D384900709751 /* PlayingCardGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 142087F31E3D384900709751 /* PlayingCardGameViewController.m */; };
+		142087F71E3D38FA00709751 /* SetCardGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 142087F61E3D38FA00709751 /* SetCardGameViewController.m */; };
+		142087FA1E3D3A2A00709751 /* Grid.m in Sources */ = {isa = PBXBuildFile; fileRef = 142087F91E3D3A2A00709751 /* Grid.m */; };
+		142087FD1E3D6CC200709751 /* MyGrid.m in Sources */ = {isa = PBXBuildFile; fileRef = 142087FC1E3D6CC200709751 /* MyGrid.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +80,16 @@
 		141B9DED1E2ECC1B008005F8 /* SetCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetCard.m; sourceTree = "<group>"; };
 		141B9DEE1E2ECC1B008005F8 /* SetCardDeck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetCardDeck.h; sourceTree = "<group>"; };
 		141B9DEF1E2ECC1B008005F8 /* SetCardDeck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetCardDeck.m; sourceTree = "<group>"; };
+		142087EF1E3D369000709751 /* CardGameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CardGameViewController.h; sourceTree = "<group>"; };
+		142087F01E3D373900709751 /* CardGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardGameViewController.m; sourceTree = "<group>"; };
+		142087F21E3D37E600709751 /* PlayingCardGameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlayingCardGameViewController.h; sourceTree = "<group>"; };
+		142087F31E3D384900709751 /* PlayingCardGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayingCardGameViewController.m; sourceTree = "<group>"; };
+		142087F51E3D389300709751 /* SetCardGameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SetCardGameViewController.h; sourceTree = "<group>"; };
+		142087F61E3D38FA00709751 /* SetCardGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetCardGameViewController.m; sourceTree = "<group>"; };
+		142087F81E3D3A1300709751 /* Grid.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Grid.h; sourceTree = "<group>"; };
+		142087F91E3D3A2A00709751 /* Grid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Grid.m; sourceTree = "<group>"; };
+		142087FB1E3D6C7B00709751 /* MyGrid.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyGrid.h; sourceTree = "<group>"; };
+		142087FC1E3D6CC200709751 /* MyGrid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyGrid.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +147,16 @@
 				141B9DEA1E2DD3BD008005F8 /* SetCardView.m */,
 				141B9DA81E242A4B008005F8 /* ViewController.h */,
 				141B9DA91E242A4B008005F8 /* ViewController.m */,
+				142087EF1E3D369000709751 /* CardGameViewController.h */,
+				142087F01E3D373900709751 /* CardGameViewController.m */,
+				142087F21E3D37E600709751 /* PlayingCardGameViewController.h */,
+				142087F31E3D384900709751 /* PlayingCardGameViewController.m */,
+				142087F51E3D389300709751 /* SetCardGameViewController.h */,
+				142087F61E3D38FA00709751 /* SetCardGameViewController.m */,
+				142087F81E3D3A1300709751 /* Grid.h */,
+				142087F91E3D3A2A00709751 /* Grid.m */,
+				142087FB1E3D6C7B00709751 /* MyGrid.h */,
+				142087FC1E3D6CC200709751 /* MyGrid.m */,
 				141B9DAB1E242A4B008005F8 /* Main.storyboard */,
 				141B9DAE1E242A4B008005F8 /* Assets.xcassets */,
 				141B9DB01E242A4B008005F8 /* LaunchScreen.storyboard */,
@@ -322,16 +347,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				141B9DEB1E2DD3BD008005F8 /* SetCardView.m in Sources */,
+				142087F71E3D38FA00709751 /* SetCardGameViewController.m in Sources */,
 				141B9DE51E2446BA008005F8 /* Card.m in Sources */,
 				141B9DE81E2446BA008005F8 /* PlayingCardDeck.m in Sources */,
+				142087F41E3D384900709751 /* PlayingCardGameViewController.m in Sources */,
 				141B9DF11E2ECC1B008005F8 /* SetCardDeck.m in Sources */,
 				141B9DAA1E242A4B008005F8 /* ViewController.m in Sources */,
 				141B9DF01E2ECC1B008005F8 /* SetCard.m in Sources */,
 				141B9DE71E2446BA008005F8 /* PlayingCard.m in Sources */,
 				141B9DDA1E242B8A008005F8 /* PlayingCardView.m in Sources */,
+				142087FA1E3D3A2A00709751 /* Grid.m in Sources */,
 				141B9DA71E242A4B008005F8 /* AppDelegate.m in Sources */,
 				141B9DE61E2446BA008005F8 /* Deck.m in Sources */,
+				142087F11E3D373900709751 /* CardGameViewController.m in Sources */,
 				141B9DA41E242A4B008005F8 /* main.m in Sources */,
+				142087FD1E3D6CC200709751 /* MyGrid.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -561,6 +591,7 @@
 				141B9DCE1E242A4B008005F8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		141B9DCF1E242A4B008005F8 /* Build configuration list for PBXNativeTarget "MatchimaTests" */ = {
 			isa = XCConfigurationList;
@@ -569,6 +600,7 @@
 				141B9DD11E242A4B008005F8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		141B9DD21E242A4B008005F8 /* Build configuration list for PBXNativeTarget "MatchimaUITests" */ = {
 			isa = XCConfigurationList;
@@ -577,6 +609,7 @@
 				141B9DD41E242A4B008005F8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
