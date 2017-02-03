@@ -395,7 +395,7 @@
     CGContextRestoreGState(UIGraphicsGetCurrentContext());
 }
 
-//--Handle Setup and Initialization
+//--Handle Setup and Initialization--
 
 -(void)setup{
     self.backgroundColor = nil;
