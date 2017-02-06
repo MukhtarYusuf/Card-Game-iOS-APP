@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		141AD4421E3EC99900A7D691 /* CardMatchingGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 141AD4411E3EC99900A7D691 /* CardMatchingGame.m */; };
 		141B9DA41E242A4B008005F8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 141B9DA31E242A4B008005F8 /* main.m */; };
 		141B9DA71E242A4B008005F8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 141B9DA61E242A4B008005F8 /* AppDelegate.m */; };
 		141B9DAA1E242A4B008005F8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 141B9DA91E242A4B008005F8 /* ViewController.m */; };
@@ -48,6 +49,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		141AD4401E3EC99900A7D691 /* CardMatchingGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardMatchingGame.h; sourceTree = "<group>"; };
+		141AD4411E3EC99900A7D691 /* CardMatchingGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardMatchingGame.m; sourceTree = "<group>"; };
 		141B9D9F1E242A4B008005F8 /* Matchima.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Matchima.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		141B9DA31E242A4B008005F8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		141B9DA51E242A4B008005F8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -209,6 +212,8 @@
 				141B9DED1E2ECC1B008005F8 /* SetCard.m */,
 				141B9DEE1E2ECC1B008005F8 /* SetCardDeck.h */,
 				141B9DEF1E2ECC1B008005F8 /* SetCardDeck.m */,
+				141AD4401E3EC99900A7D691 /* CardMatchingGame.h */,
+				141AD4411E3EC99900A7D691 /* CardMatchingGame.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -356,6 +361,7 @@
 				141B9DF01E2ECC1B008005F8 /* SetCard.m in Sources */,
 				141B9DE71E2446BA008005F8 /* PlayingCard.m in Sources */,
 				141B9DDA1E242B8A008005F8 /* PlayingCardView.m in Sources */,
+				141AD4421E3EC99900A7D691 /* CardMatchingGame.m in Sources */,
 				142087FA1E3D3A2A00709751 /* Grid.m in Sources */,
 				141B9DA71E242A4B008005F8 /* AppDelegate.m in Sources */,
 				141B9DE61E2446BA008005F8 /* Deck.m in Sources */,

@@ -55,27 +55,32 @@
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1w1-MB-SAU">
                                 <frame key="frameInset" minX="16" minY="88" width="343" height="413"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Score: 0" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lLT-gz-T2w">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="BJ0-P6-qrY">
+                                <frame key="frameInset" minX="147" minY="519" width="80" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="Deal Again">
+                                    <color key="titleColor" red="0.74509803919999995" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="dealAgain:" destination="xEM-AV-gjM" eventType="touchUpInside" id="tKt-kK-lkU"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Score: 0" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qcp-1E-Lx5">
                                 <frame key="frameInset" minX="16" minY="567" width="343" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="BJ0-P6-qrY">
-                                <frame key="frameInset" minX="147" minY="519" width="80" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <state key="normal" title="Deal Again"/>
-                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.60000002384185791" green="0.40000000596046448" blue="0.20000000298023224" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Set Card Game" id="atD-ma-HoR"/>
                     <connections>
                         <outlet property="cardContainerView" destination="1w1-MB-SAU" id="CoI-jk-y40"/>
+                        <outlet property="scoreLabel" destination="qcp-1E-Lx5" id="1Mx-1g-qK0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xMn-yG-vfu" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -102,7 +107,12 @@
                                 <frame key="frameInset" minX="147" minY="498" width="80" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <state key="normal" title="Deal Again"/>
+                                <state key="normal" title="Deal Again">
+                                    <color key="titleColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="dealAgain:" destination="liF-Tx-OcO" eventType="touchUpInside" id="bTr-18-tlr"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Three Card Mode: OFF" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WPS-t9-C9j">
                                 <frame key="frameInset" minX="16" minY="538" width="180" height="21"/>
@@ -111,7 +121,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i6P-gN-cCB">
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="i6P-gN-cCB">
                                 <frame key="frameInset" minX="318" minY="533" width="51" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </switch>
@@ -128,6 +138,7 @@
                     <navigationItem key="navigationItem" title="Playing Card Game" id="wmb-k4-GcW"/>
                     <connections>
                         <outlet property="cardContainerView" destination="kc2-Cg-dBu" id="l0F-yL-n0L"/>
+                        <outlet property="scoreLabel" destination="yFZ-lK-pRe" id="f5L-FG-F0W"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WOF-kY-ZMx" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -152,11 +163,11 @@
             </objects>
             <point key="canvasLocation" x="910" y="110"/>
         </scene>
-        <!--Item 1-->
+        <!--Playing Card Game-->
         <scene sceneID="Byf-W9-76S">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="s3Z-uk-Qmn" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 1" id="1Wa-aJ-Y9y"/>
+                    <tabBarItem key="tabBarItem" title="Playing Card Game" image="Playing card tab icon" id="1Wa-aJ-Y9y"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="DlY-cq-lQt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -171,11 +182,11 @@
             </objects>
             <point key="canvasLocation" x="1861.5999999999999" y="-217.24137931034485"/>
         </scene>
-        <!--Item 2-->
+        <!--Set Card Game-->
         <scene sceneID="0dg-2h-syw">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="OFU-ad-ynt" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 2" id="0V6-Od-3OJ"/>
+                    <tabBarItem key="tabBarItem" title="Set Card Game" image="Set card tab icon" id="0V6-Od-3OJ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="eAF-HE-nEb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -191,4 +202,8 @@
             <point key="canvasLocation" x="1861.5999999999999" y="437.63118440779613"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Playing card tab icon" width="15" height="15"/>
+        <image name="Set card tab icon" width="16" height="15"/>
+    </resources>
 </document>
