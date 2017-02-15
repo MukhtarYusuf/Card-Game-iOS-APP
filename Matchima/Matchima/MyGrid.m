@@ -34,8 +34,8 @@
     paddedCellOrigin.x = cellOrigin.x + cellPadding;
     paddedCellOrigin.y = cellOrigin.y + cellPadding;
     
-    NSLog(@"Origin before pad: x: %f y: %f ", cellOrigin.x, cellOrigin.y);
-    NSLog(@"Origin after pad: x: %f y: %f ", paddedCellOrigin.x, paddedCellOrigin.y);
+//    NSLog(@"Origin before pad: x: %f y: %f ", cellOrigin.x, cellOrigin.y);
+//    NSLog(@"Origin after pad: x: %f y: %f ", paddedCellOrigin.x, paddedCellOrigin.y);
     
     paddedCellSize.width = paddedCellWidth;
     paddedCellSize.height = paddedCellHeight;
