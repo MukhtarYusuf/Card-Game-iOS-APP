@@ -13,5 +13,6 @@
 @property (nonatomic) NSUInteger rank;
 @property (strong, nonatomic) NSString *suit;
 @property (nonatomic) BOOL faceUP;
+@property (nonatomic) BOOL isMatched;
 
 @end
