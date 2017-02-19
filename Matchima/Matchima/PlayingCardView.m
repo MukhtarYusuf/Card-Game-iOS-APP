@@ -46,6 +46,11 @@
     [self setNeedsDisplay];
 }
 
+-(void)setIsMatched:(BOOL)isMatched{
+    _isMatched = isMatched;
+    [self setNeedsDisplay];
+}
+
 - (NSString *)rankAsString{
     return @[@"?",@"A",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9",@"10",@"J",@"Q",@"K"][self.rank];
 }
@@ -88,6 +93,10 @@
         [[UIImage imageNamed:@"cardback"] drawInRect:self.bounds];
     }
     
+    if(self.isMatched)
+        self.alpha = 0.5;
+    else
+        self.alpha = 1;
 }
 
 -(void)drawCorners{
