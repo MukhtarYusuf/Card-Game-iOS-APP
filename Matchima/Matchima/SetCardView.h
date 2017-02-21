@@ -14,6 +14,7 @@
 @property (strong, nonatomic) NSString *color;
 @property (strong, nonatomic) NSString *shading;
 @property (nonatomic) int number;
+@property (nonatomic) BOOL isChosen;
 @property (nonatomic) BOOL faceUp;
 
 @end
