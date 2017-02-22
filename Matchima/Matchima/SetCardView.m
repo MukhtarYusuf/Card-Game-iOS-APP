@@ -48,6 +48,10 @@
     _faceUp = faceUp;
     [self setNeedsDisplay];
 }
+-(void)setIsChosen:(BOOL)isChosen{
+    _isChosen = isChosen;
+    [self setNeedsDisplay];
+}
 
 //--Handle Drawing--
 
@@ -80,12 +84,17 @@
     UIBezierPath *roundedRect = [UIBezierPath bezierPathWithRoundedRect:self.bounds cornerRadius:[self cornerRadius]];
     [roundedRect addClip];
     
-    [[UIColor whiteColor] setFill];
+    if(!self.isChosen)
+        [[UIColor whiteColor] setFill];
+    else
+        [[UIColor cyanColor] setFill];
+    
     [roundedRect fill];
     
     [[UIColor blackColor] setStroke];
     [roundedRect stroke];
     
+#warning remember to remove faceUp from set cards
     if(_faceUp){
         if([self.shape isEqualToString:@"Diamond"])
             [self drawAllDiamonds];
@@ -96,14 +105,6 @@
     }else{
         [[UIImage imageNamed:@"cardback1"] drawInRect:self.bounds];
     }
-    
-//    [self drawAllDiamonds];
-    
-//    [self drawSquiggleAt:-1*([self shapeWidthScaleFactor]/2) and:0];
-    
-//    [self drawOvalAt:-1*([self shapeWidthScaleFactor]/2) and:-1*([self shapeHeightScaleFactor]/2) withColor:[UIColor blueColor] andShading:@"Striped"];
-    
-//    [self drawDiamondAt:-1*([self shapeWidthScaleFactor]/2) and:0 withColor:[UIColor greenColor] andShading:@"Striped"];
 }
 
 -(void)drawAllDiamonds{
@@ -401,6 +402,7 @@
     self.backgroundColor = nil;
     self.opaque = NO;
     self.contentMode = UIViewContentModeRedraw;
+    self.faceUp = YES;
 }
 
 -(void)awakeFromNib{
