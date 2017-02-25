@@ -15,4 +15,6 @@
 @property (nonatomic) NSUInteger numOfColumns;
 
 -(CGRect)frameForCellInRow:(NSUInteger)row andColumn:(NSUInteger)column;
+-(CGFloat)cellWidth;
+-(CGFloat)cellHeight;
 @end
