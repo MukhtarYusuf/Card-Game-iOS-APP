@@ -21,19 +21,29 @@
 @implementation CardGameViewController
 
 CGFloat originalAnchorLength;
+CGRect originalCardContainerBounds;
 
 static const int INITIAL_NUMBER_OF_CARDS = 12;
 static const double CARD_ASPECT_RATIO = 0.5;
 
-static int NUMBER_OF_COLUMNS = 5;
+static int NUMBER_OF_COLUMNS = 4;
 static int NUMBER_OF_ROWS = 3;
 
 - (IBAction)dealAgain:(UIButton *)sender{
+    NUMBER_OF_COLUMNS = 4;
+    NUMBER_OF_ROWS = 3;
+    self.cardContainerView.bounds = originalCardContainerBounds;
+    [self setUpContainerViewHeight];
+    [self setUpMyGrid];
     self.game = [self createGame];
     [self removeAllCardSubViews];
     [self initializeAndAddCardViews];
     [self addTapGestureRecognizerToCards];
     [self updateUI];
+}
+
+- (IBAction)drawThreeCards:(id)sender{
+    [self drawThree];
 }
 
 -(void)tapRootView:(UITapGestureRecognizer *)sender{
@@ -101,6 +111,46 @@ static int NUMBER_OF_ROWS = 3;
 //    NSLog(@"Is this tapped chosen: %@", card.isChosen ? @"YES":@"NO");
     [self.game chooseCardAtIndex:chosenCardIndex];
     [self updateUI];
+}
+
+-(void)drawThree{
+    NUMBER_OF_COLUMNS++;
+    [self setUpContainerViewHeight];
+    [self setUpMyGrid];
+    __block int cardIndex = 0;
+    for(int i = 0; i < self.myGridForCards.numOfRows; i++){
+        for(int j = 0; j < self.myGridForCards.numOfColumns; j++){
+            if(j != self.myGridForCards.numOfColumns-1){
+                [UIView animateWithDuration:0.4
+                                 animations:^{
+                                     ((UIView *)self.cardViews[cardIndex]).frame = [self.myGridForCards frameForCellInRow:i andColumn:j]; //Use Introspection?
+                                 }];
+                cardIndex++;
+                 
+            }else{
+                SetCard *drawnSetCard = (SetCard *)[self.game drawOneCardIntoGame]; //Use Introspection?
+                CGRect initialFrame;
+                initialFrame.origin = CGPointMake(self.myGridForCards.size.width-[self.myGridForCards cellWidth], 0.0);
+                SetCardView *newScv = [[SetCardView alloc] initWithFrame:initialFrame];
+                if(drawnSetCard){
+                    newScv.shape = drawnSetCard.shape;
+                    newScv.color = drawnSetCard.color;
+                    newScv.number = drawnSetCard.number;
+                    newScv.shading = drawnSetCard.shading;
+                    newScv.isChosen = drawnSetCard.isChosen;
+                    
+                    [self.cardContainerView addSubview:newScv];
+                    [self.cardViews insertObject:newScv atIndex:cardIndex];
+                    [UIView animateWithDuration:0.4
+                                     animations:^{
+                                         newScv.frame = [self.myGridForCards frameForCellInRow:i andColumn:j];
+                                         [self.cardViewFrames insertObject:[NSValue valueWithCGRect:newScv.frame] atIndex:cardIndex];
+                                         cardIndex++;
+                                     }];
+                }
+            }
+        }
+    }
 }
 
 -(void)updateUI{
@@ -295,10 +345,11 @@ static int NUMBER_OF_ROWS = 3;
     }
 }
 
-//--View Controller Life Cycle
+//--View Controller Life Cycle--
 #pragma mark - Lifecycle
 -(void)viewDidLoad{
     [super viewDidLoad];
+    originalCardContainerBounds = self.cardContainerView.bounds;
     [self setUpContainerViewHeight];
     [self setUpMyGrid];
 //    [self setUpGrid];
