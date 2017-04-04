@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Matchima.xcscheme</key>
+		<key>Matchismo.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,17 +12,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>141B9D9E1E242A4B008005F8</key>
+		<key>148082D7196B23C1001A95A8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>141B9DB71E242A4B008005F8</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>141B9DC21E242A4B008005F8</key>
+		<key>148082F8196B23C1001A95A8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
