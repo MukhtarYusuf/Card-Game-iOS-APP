@@ -2,17 +2,16 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "cardback1.jpg",
-      "scale" : "1x"
+      "scale" : "1x",
+      "filename" : "blank card rounded corner.png"
     },
     {
       "idiom" : "universal",
-      "filename" : "cardback1-1.jpg",
-      "scale" : "2x"
+      "scale" : "2x",
+      "filename" : "blank card hi-res.png"
     },
     {
       "idiom" : "universal",
-      "filename" : "cardback1-2.jpg",
       "scale" : "3x"
     }
   ],
