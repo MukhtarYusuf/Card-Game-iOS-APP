@@ -2,18 +2,18 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "Set-game-cards.png",
-      "scale" : "1x"
+      "scale" : "1x",
+      "filename" : "514_400x400_NoPeel.png"
     },
     {
       "idiom" : "universal",
-      "filename" : "Set-game-cards-1.png",
-      "scale" : "2x"
+      "scale" : "2x",
+      "filename" : "514_400x400_NoPeel-1.png"
     },
     {
       "idiom" : "universal",
-      "filename" : "Set-game-cards-2.png",
-      "scale" : "3x"
+      "scale" : "3x",
+      "filename" : "514_400x400_NoPeel-2.png"
     }
   ],
   "info" : {
