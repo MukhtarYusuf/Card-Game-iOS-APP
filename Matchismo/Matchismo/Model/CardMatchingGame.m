@@ -11,8 +11,7 @@
 
 @interface CardMatchingGame()
 @property (nonatomic, readwrite) NSInteger score;
-@property (strong, nonatomic) NSMutableArray *cards;//of Card
-@property (strong, nonatomic) Deck *deck;
+@property (strong, nonatomic) NSMutableArray *cards; //of Card
 @end
 
 @implementation CardMatchingGame
@@ -33,7 +32,6 @@ NSMutableArray *chosenCards;
     self = [super init];
     
     if(self){
-        self.deck = deck;
         for(int i = 0; i < count; i++){
             Card *randomCard = [deck drawRandomCard];
             if(randomCard){
@@ -45,6 +43,7 @@ NSMutableArray *chosenCards;
             }
         }
     }
+    
     return self;
 }
 
@@ -53,28 +52,9 @@ NSMutableArray *chosenCards;
     return (index < [self.cards count]) ? self.cards[index] : nil;
 }
 
--(Card *)drawOneCardIntoGame{
-    Card *card = [self.deck drawRandomCard];
-    if(card)
-        [self.cards addObject:card];
-    return card;
-}
-
--(NSMutableArray *)drawThreeCardsIntoGame{
-    NSMutableArray *drawnCards; //Of Card
-    if([self.deck cardCount] >= 3){
-        for(int i = 1; i <= 3; i++){
-            Card *drawnCard = [self drawOneCardIntoGame];
-            if(drawnCard)
-                [drawnCards addObject:drawnCard];
-        }
-    }
-    return drawnCards;
-}
-
 //Select card at index and perform operations
 - (void)chooseCardAtIndex:(NSUInteger)index{
-//    NSLog(@"In chooseCardAtIndex: %lu", index);
+    
     if(!chosenCards){
         chosenCards = [[NSMutableArray alloc] init];
     }
@@ -118,8 +98,6 @@ NSMutableArray *chosenCards;
                     [self updateGameForMismatch:card];
                 }
             }
-            if(card == nil)
-                NSLog(@"In card not matched else for update");
             self.score -= COST_TO_CHOOSE;
             card.chosen = YES;
         }

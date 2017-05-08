@@ -18,8 +18,6 @@
 
 - (void)chooseCardAtIndex:(NSUInteger)index;
 - (Card *)cardAtIndex:(NSUInteger)index;
--(Card *)drawOneCardIntoGame;
--(NSMutableArray *)drawThreeCardsIntoGame;
 
 @property (nonatomic, readonly) NSInteger score;
 @property (nonatomic) BOOL threeCardGame;
