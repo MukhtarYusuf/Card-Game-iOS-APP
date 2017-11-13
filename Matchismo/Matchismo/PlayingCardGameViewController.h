@@ -1,9 +1,9 @@
 //
 //  PlayingCardGameViewController.h
-//  Matchima
+//  Matchismo
 //
-//  Created by Mukhtar Yusuf on 1/28/17.
-//  Copyright © 2017 Mukhtar Yusuf. All rights reserved.
+//  Created by Mukhtar Yusuf on 12/30/14.
+//  Copyright (c) 2014 Mukhtar Yusuf. All rights reserved.
 //
 
 #import "CardGameViewController.h"
